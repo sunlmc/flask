@@ -13,7 +13,17 @@ movies = [
 ]
 
 @app.route('/')
+@app.route('/index')
+@app.route('/home')
+@app.route('/user/<name>')
 def index():
     return render_template('index.html',name=name,movies=movies)
 
+@app.route('/test')
+def test_url_for():
+	print(url_for('user',name='lmc'))
+	print(url_for('user',name='lly'))
+	print(url_for('test_url_for'))
+	print(url_for('test_url_for',num=2))
+	return '<h2>Test page!</h2>'
 
