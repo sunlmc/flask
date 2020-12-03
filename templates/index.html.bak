@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>{{ name }}'s Watchlist</title>
+	<title>{{ user.name }}'s Watchlist</title>
 	<link rel="icon" href="{{ url_for('static',filename='favicon.ico') }}">
 	<link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}" type="text/css">
 </head>
 <body>
 	<h2>
 	<img alt="Avatar " class="avatar"  src="{{ url_for('static',filename='images/avatar.png') }}">
-	{{ name }}'s Watchlist
+	{{ user.name }}'s Watchlist
 	</h2>
 	<p>{{ movies|length }} Titles</p>
 	<ul class="movie-list">
@@ -17,7 +17,7 @@
 		<li>{{ movie.title }} - {{ movie.year }}</li>
 		{% endfor %}
 	</ul>
-	<footer>
+	<footer class="footer">
 		<img alt="Walking Totoro" class="totoro" src="{{ url_for('static',filename='images/totoro.gif') }}">
 		<small>&copy; 2020 <a href="http://helloflask.com/tutorial">HelloFlask</a></small>
 	</footer>
