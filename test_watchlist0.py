@@ -48,7 +48,7 @@ class WatchlistTestCase(unittest.TestCase):
     def test_index_page(self):
         response = self.client.get('/')
         data = response.get_data(as_text=True)
-        self.assertIn('Test's Watchlist', data)
+        self.assertIn('Test\'s Watchlist', data)
         self.assertIn('Test Movie Title', data)
         self.assertEqual(response.status_code, 200)
 
